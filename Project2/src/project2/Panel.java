@@ -1,5 +1,6 @@
 package project2;
 
+import java.awt.Container;
 import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,6 +23,8 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		super(title); 
 		setSize(600, 600); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container myContentPane = getContentPane();
+	    myContentPane.setLayout(null);
 		setLocationRelativeTo(null); 
 		
 		//initializes all of the JLabels 
@@ -30,18 +33,14 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		price = new JLabel("Price of Item: "); 
 		numericID = new JLabel("Numeric ID of item: "); 
 		category = new JLabel("Category: "); 
+		
 		//adds all of the JLabels to the frame
-		blah.setLocation(25,5);
+		blah.setLocation(200,5);
 		blah.setSize(100,20);
 		add(blah);	
 		
-		productName.setLocation(5, 5);
-		add(productName);
-		quantity.setLocation(10, 10); 
-		add(quantity); 
-		add(price); 
-		add(numericID); 
-		add(category); 
+		
+		
 
 	
 		

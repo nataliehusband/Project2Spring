@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class mainClass 
 {		
 	static Panel frame = new Panel("Hello"); 
+	static Superclass start = new Superclass();
 
 	public static void main(String[] args) 
 	{
