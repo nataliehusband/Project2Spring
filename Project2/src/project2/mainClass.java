@@ -8,7 +8,7 @@ public class mainClass
 
 	public static void main(String[] args) 
 	{
-		JOptionPane.showMessageDialog(null, "Welcome to this program!");
+		//JOptionPane.showMessageDialog(null, "Welcome to this program!");
 		frame.setVisible(true); 
 	}
 }

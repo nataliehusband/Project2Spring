@@ -4,13 +4,17 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/ch56_11.html
 {
 	JPanel newpanel; 
-	JLabel newlabel; 
-	JTextArea blah = new JTextArea(2, 15); 
+	JLabel productName; 
+	JLabel quantity; 
+	JLabel price; 
+	JLabel numericID; 
+	JLabel category; 
+	JTextField blah = new JTextField(10); //http://www.wideskills.com/java-tutorial/java-jtextfield-class-example
 	
 	//constructor
 	Panel(String title)
@@ -19,12 +23,29 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		setSize(600, 600); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null); 
+		
+		//initializes all of the JLabels 
+		productName = new JLabel("Store Product Name: "); 
+		quantity = new JLabel("Quantity of Item: ");
+		price = new JLabel("Price of Item: "); 
+		numericID = new JLabel("Numeric ID of item: "); 
+		category = new JLabel("Category: "); 
+		//adds all of the JLabels to the frame
+		blah.setLocation(25,5);
+		blah.setSize(100,20);
+		add(blah);	
+		
+		productName.setLocation(5, 5);
+		add(productName);
+		quantity.setLocation(10, 10); 
+		add(quantity); 
+		add(price); 
+		add(numericID); 
+		add(category); 
+
 	
-		setLayout( new FlowLayout() ); 
-		newlabel = new JLabel("Welcome to Swing"); 
-		add(newlabel); 
-		blah.setLocation(25,25);
-		blah.setSize(550,550);
-		add(blah); 
+		
+		
+		setVisible(true);
 	}
 }
