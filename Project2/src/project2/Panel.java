@@ -72,6 +72,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		add(space); 
 		finished.setLocation(200, 200);
 		add(finished); 
+		//Action
 		finished.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
