@@ -119,6 +119,10 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 						JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!");
 					}
 					System.out.println(num); 
+					
+					int i = box.getSelectedIndex(); 
+					System.out.println(categoryOptions[i]);
+					
 				if(x==1 && y==1 && z==1)
 				{	
 					setVisible(false); 
