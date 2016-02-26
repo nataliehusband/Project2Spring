@@ -5,28 +5,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/ch56_11.html
 {
 	JPanel newpanel; 
-	JLabel intro; 
-	JLabel productName; 
-	JLabel quantity; 
-	JLabel price; 
-	JLabel numericID; 
-	JLabel category; 
-	JLabel space; 
+	JLabel intro, productName, quantity, price, numericID, category, space; 
+	String pa, qa, pra, na, ca;  
+	String[] categoryOptions = {"Appliances", "TV & Home Theater", "Computers & Tablets", "Cell Phones", "Cameras & Camcorders", "Audio"
+			+ "Car Electronics & GPS", "Video Games, Movies & Music", "Health, Fitness & Beauty", "Connected Home & Housewares",
+			"Toys, Games & Drones", "Wearable Technology"}; 
+	int quant, pri, num; 
 	JTextField productAnswer = new JTextField(10); //http://www.wideskills.com/java-tutorial/java-jtextfield-class-example
 	JTextField quantityAns = new JTextField(10); 
 	JTextField priceAns = new JTextField(10); 
 	JTextField numericAns = new JTextField(10); 
-	JTextField categoryAns = new JTextField(10); 
 	JButton finished = new JButton("Okay"); 
 	
 	//constructor
@@ -44,7 +43,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		quantity = new JLabel("Quantity of Item:      ");
 		price = new JLabel("Price of Item:            "); 
 		numericID = new JLabel("Numeric ID of item: "); 
-		category = new JLabel("Category:                 "); 
+		category = new JLabel("Category: "); 
 		space = new JLabel("                            ");
 	
 		add(intro); 
@@ -65,8 +64,10 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		add(numericAns); 
 		
 		add(category);
-		categoryAns.setSize(100, 20);
-		add(categoryAns); 
+		JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
+		//box.setSelectedIndex();
+		add(box); 
+		//categoryOptions.addActionListener(categoryOptions); 
 		
 		add(space); 
 		finished.setLocation(200, 200);
@@ -75,15 +76,53 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				try 
-				{
-					PrintWriter out = new PrintWriter("Catalog.txt");
-				} 
-				catch (FileNotFoundException e1) 
-				{
-					e1.printStackTrace();
+				int x, y, z; 
+					pa = productAnswer.getText();
+					System.out.println(pa);
+				
+					qa = quantityAns.getText(); 
+					try
+					{
+						x=1; 
+						quant = Integer.parseInt(qa);
+					}
+					catch(NumberFormatException e1)
+					{
+						x=0; 
+						JOptionPane.showMessageDialog(null, "Change your quantity to a number!");
+					}
+					
+					System.out.println(quant); 
+					
+					pra = priceAns.getText();
+					try
+					{
+						y=1; 
+						pri = Integer.parseInt(pra);
+					}
+					catch(NumberFormatException e1)
+					{
+						y=0; 
+						JOptionPane.showMessageDialog(null, "Change your price to a number!");
+					}
+					System.out.println(pri); 
+					
+					na = numericAns.getText(); 
+					try
+					{
+						z=1; 
+						num = Integer.parseInt(na);
+					}
+					catch(NumberFormatException e2)
+					{
+						z=0; 
+						JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!");
+					}
+					System.out.println(num); 
+				if(x==1 && y==1 && z==1)
+				{	
+					setVisible(false); 
 				}
-				setVisible(false); 
 			}
 		});
 
