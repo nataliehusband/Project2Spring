@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Superclass
 {
-	private static File file = new File("Catalog");
+	protected static File file = new File("Catalog.txt");
 	private static Scanner in;
 	public final int SUBJECTS = 5;
 	private int[] value = {0};
@@ -50,15 +50,15 @@ public class Superclass
 				String q = in.nextLine();
 				q.trim();
 				nameArray[i][j] = q;
-				System.out.print(nameArray[i][j] + "  ");
+				//System.out.print(nameArray[i][j] + "  ");
 			}
-			System.out.println("");
+			//System.out.println("");
 		}
 	}
 	
 	public String[][] getArray(){
-		
-		return nameArray;
+		String[][] newArray = nameArray.clone();
+		return newArray;
 	}
 	
 	public int getValue(){

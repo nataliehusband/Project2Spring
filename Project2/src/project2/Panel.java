@@ -62,13 +62,33 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		
 		finished.setLocation(200, 200);
 		add(finished); 
-		finished.addActionListener(null);
+		finished.addActionListener(new ActionListener()
+				{
+					public void actionPerformed(ActionEvent e)
+					{
+						Inventory.addResult();
+						Inventory.printResult();
+					}
+				}
+		);
 
 		setVisible(true);
 	}
 	
-	public void ActionPerformed(ActionEvent e)
-	{
-		
+	
+	public String getName(){
+		return("Test Name");
 	}
-}
+	public String getQuantity(){
+		return("Test Amount");
+	}
+	public String getPrice(){
+		return("Test Price");
+	}
+	public String getID(){
+		return("Test ID");
+	}
+	public String getCat(){
+		return("Test Category");
+	}
+	}
