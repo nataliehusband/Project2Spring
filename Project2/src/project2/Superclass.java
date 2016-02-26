@@ -7,7 +7,7 @@ public class Superclass
 {
 	private static File file = new File("Catalog");
 	private static Scanner in;
-	private final int SUBJECTS = 5;
+	public final int SUBJECTS = 5;
 	private int[] value = {0};
 	private String[][] nameArray;
 	private String g;
@@ -64,4 +64,5 @@ public class Superclass
 	public int getValue(){
 		return value[0];
 	}
+	
 }
