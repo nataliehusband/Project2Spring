@@ -9,7 +9,7 @@ public class Inventory extends Superclass
 	private String[][] nameArray = getArray();
 	private int[] value = {getValue()};
 	private static List<String> arrayList = new ArrayList();
-	private static Panel frame = new Panel("Hello");
+	private static Panel frame = new Panel("BEST BUY CATALOG SHEET");
 	private static PrintWriter out;
 	
 	public Inventory(){
@@ -18,7 +18,7 @@ public class Inventory extends Superclass
 	
 	// Turns the Array given from the Superclass
 	// from the 2D Array
-	
+	//003b64
 	private void arrayList(){
 		for(int i = 0;i<value[0];i++){
 			for(int j = 0;j<SUBJECTS;j++){

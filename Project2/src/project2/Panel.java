@@ -37,7 +37,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		setSize(350, 400); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null); 
-		getContentPane().setBackground(Color.BLUE);
+		getContentPane().setBackground(Color.decode("#003b64"));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 25));
 		
 		//initializes all of the JLabels 
@@ -55,25 +55,25 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		add(productName);
 		productName.setForeground(Color.WHITE);
 		productAnswer.setSize(100,20);
-		productAnswer.setBackground(Color.YELLOW);
+		productAnswer.setBackground(Color.decode("#FFF200"));
 		add(productAnswer);	
 		
 		add(quantity); 
 		quantity.setForeground(Color.WHITE);
 		quantityAns.setSize(100, 20);
-		quantityAns.setBackground(Color.YELLOW);
+		quantityAns.setBackground(Color.decode("#FFF200"));
 		add(quantityAns);
 		
 		add(price);
 		price.setForeground(Color.WHITE);
 		priceAns.setSize(100, 20);
-		priceAns.setBackground(Color.YELLOW);
+		priceAns.setBackground(Color.decode("#FFF200"));
 		add(priceAns); 
 		
 		add(numericID); 
 		numericID.setForeground(Color.WHITE);
 		numericAns.setSize(100, 20);
-		numericAns.setBackground(Color.YELLOW);
+		numericAns.setBackground(Color.decode("#FFF200"));
 		add(numericAns); 
 		
 		
@@ -81,13 +81,13 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		category.setForeground(Color.WHITE);
 		JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 		//box.setSelectedIndex();
-		box.setBackground(Color.YELLOW);
+		box.setBackground(Color.decode("#FFF200"));
 		add(box); 
 		//categoryOptions.addActionListener(categoryOptions); 
 		
 		add(space);  
 		
-		finished.setBackground(Color.YELLOW);
+		finished.setBackground(Color.decode("#FFF200"));
 		finished.setLocation(200, 200);
 		add(finished); 
 		finished.addActionListener(new ActionListener()
