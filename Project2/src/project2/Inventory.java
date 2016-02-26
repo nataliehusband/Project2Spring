@@ -40,7 +40,7 @@ public class Inventory extends Superclass
 		arrayList.add(frame.getCat());
 		for (String e : arrayList)
 	      {
-	         System.out.println(e);
+	         //System.out.println(e);
 	      }
 		
 	}
