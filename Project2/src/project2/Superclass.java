@@ -3,9 +3,12 @@ package project2;
 import java.io.*;
 import java.util.*;
 
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
 public class Superclass
 {
-	protected static File file = new File("Catalog.txt");
+	protected static File file = mainClass.GetFile();
 	private static Scanner in;
 	public final int SUBJECTS = 5;
 	private int[] value = {0};
@@ -13,19 +16,22 @@ public class Superclass
 	private String g;
 	
 	public Superclass(){
+		
 		Initialize();
 		
 		
 	}
 	
-	public void Initialize(){
+	public void Initialize()
+	{
+		
 		try 
 		{
 			in = new Scanner(file);
 		} 
 		catch (FileNotFoundException e) 
 		{
-			e.printStackTrace();
+			
 		}
 		
 		while(in.hasNextLine()){
@@ -50,9 +56,9 @@ public class Superclass
 				String q = in.nextLine();
 				q.trim();
 				nameArray[i][j] = q;
-				//System.out.print(nameArray[i][j] + "  ");
+				System.out.print(nameArray[i][j] + "  ");
 			}
-			//System.out.println("");
+			System.out.println("");
 		}
 	}
 	
@@ -64,5 +70,7 @@ public class Superclass
 	public int getValue(){
 		return value[0];
 	}
+	
+	
 	
 }

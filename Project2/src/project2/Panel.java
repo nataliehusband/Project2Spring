@@ -1,10 +1,9 @@
 package project2;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -36,42 +35,58 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		setSize(350, 400); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null); 
+		getContentPane().setBackground(Color.decode("#003b64"));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 25));
+		
 		
 		//initializes all of the JLabels 
 		intro = new JLabel("                    Product Information Sheet:                ");
 		productName = new JLabel("Product Name:          "); 
 		quantity = new JLabel("Quantity of Item:      ");
-		price = new JLabel("Price of Item:            "); 
+		price = new JLabel("Price of Item:           $"); 
 		numericID = new JLabel("Numeric ID of item: "); 
 		category = new JLabel("Category: "); 
 		space = new JLabel("                            ");
+		
 	
 		add(intro); 
+		intro.setForeground(Color.WHITE);
 		add(productName);
+		productName.setForeground(Color.WHITE);
 		productAnswer.setSize(100,20);
+		productAnswer.setBackground(Color.decode("#FFF200"));
 		add(productAnswer);	
 		
 		add(quantity); 
+		quantity.setForeground(Color.WHITE);
 		quantityAns.setSize(100, 20);
+		quantityAns.setBackground(Color.decode("#FFF200"));
 		add(quantityAns);
 		
 		add(price);
+		price.setForeground(Color.WHITE);
 		priceAns.setSize(100, 20);
+		priceAns.setBackground(Color.decode("#FFF200"));
 		add(priceAns); 
 		
 		add(numericID); 
+		numericID.setForeground(Color.WHITE);
 		numericAns.setSize(100, 20);
+		numericAns.setBackground(Color.decode("#FFF200"));
 		add(numericAns); 
 		
+		
 		add(category);
+		category.setForeground(Color.WHITE);
 		JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 		//box.setSelectedIndex();
+		box.setBackground(Color.decode("#FFF200"));
 		add(box); 
 		//categoryOptions.addActionListener(categoryOptions); 
 		
 		add(space);  
 		
+		finished.setBackground(Color.decode("#FFF200"));
 		finished.setLocation(200, 200);
 		add(finished); 
 		finished.addActionListener(new ActionListener()
@@ -124,18 +139,18 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 						
 						 
 						
-					if(x==1 && y==1 && z==1)
-					{	
-						endValues[0] = productAnswer.getText();
-						endValues[1] = quantityAns.getText();
-						endValues[2] = priceAns.getText();
-						endValues[3] = numericAns.getText();
-						int i = box.getSelectedIndex();
-						endValues[4] = categoryOptions[i];
-						Inventory.addResult();
-						Inventory.printResult();
-						setVisible(false); 
-					}
+						if(x==1 && y==1 && z==1)
+						{	
+							endValues[0] = productAnswer.getText();
+							endValues[1] = quantityAns.getText();
+							endValues[2] = priceAns.getText();
+							endValues[3] = numericAns.getText();
+							int i = box.getSelectedIndex();
+							endValues[4] = categoryOptions[i];
+							Inventory.addResult();
+							Inventory.printResult();
+							setVisible(false); 
+						}
 						
 					}
 				}

@@ -9,7 +9,7 @@ public class Inventory extends Superclass
 	private String[][] nameArray = getArray();
 	private int[] value = {getValue()};
 	private static List<String> arrayList = new ArrayList();
-	private static Panel frame = new Panel("Hello");
+	private static Panel frame = new Panel("Best Buy Catalog");
 	private static PrintWriter out;
 	
 	public Inventory(){
