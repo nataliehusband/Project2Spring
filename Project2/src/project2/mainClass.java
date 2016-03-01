@@ -4,11 +4,16 @@ import javax.swing.JOptionPane;
 
 public class mainClass 
 {		
-	static Panel frame = new Panel("Information Sheet"); 
-
+	Inventory inventory = new Inventory();
+	/*static Panel frame = new Panel("Hello"); 
+	static Superclass start = new Superclass();
+	 */
+	
+	
+	
 	public static void main(String[] args) 
 	{
-		//JOptionPane.showMessageDialog(null, "Welcome to this program!");
-		frame.setVisible(true); 
-	}
+		Inventory inventory1 = new Inventory();
+		//JOptionPane.showMessageDialog(null, "Welcome to this program!");	
+	}	
 }
