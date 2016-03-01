@@ -24,7 +24,7 @@ public class mainClass
 		while(curFile == null){
 			
 		}
-		Inventory inventory = new Inventory("view");
+		Inventory inventory = new Inventory("add");
 		
 		
 		//Inventory inventory1 = new Inventory();

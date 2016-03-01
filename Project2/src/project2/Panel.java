@@ -41,8 +41,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		"Computers & Tablets",
 		"Cell Phones",
 		"Cameras & Camcorders",
-		"Audio"
-			+ "Car Electronics & GPS",
+		"Audio, Car Electronics, & GPS",
 		"Video Games, Movies & Music", 
 		"Health, Fitness & Beauty", 
 		"Connected Home & Housewares                        ",
@@ -220,8 +219,9 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 								endValues[4] = categoryOptions[i];
 								Inventory.setResult(endValues[0], endValues[1], endValues[2], endValues[3], endValues[4] );
 								Inventory.printResult();
-								setVisible(false); 
-								System.exit(0);
+								for(int j = 0; j<Answer.length;j++){
+									Answer[j].setText("");
+								}
 							}
 						}
 						if(command == "view")
