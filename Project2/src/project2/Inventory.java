@@ -8,23 +8,28 @@ public class Inventory extends Superclass
 {
 	
 	private int[] value = {getValue()};
-	private static ArrayList arrayList = new ArrayList();
+	private static ArrayList arrayList;
 	private static PrintWriter out;
-	private String[] catNames = new String[value[0]];
+	private String[] catNames;
 	
 	public Inventory(String s){
+		arrayList = new ArrayList();
+		catNames = new String[value[0]];
 		arrayList(); 
 		int[] j = {0};
 		//Panel.setArray(nameArray);
+		
 		for(int i = 0; i < arrayList.size()/5;i++){
-			
+			catNames[i] = "";
 			catNames[i]=(String) arrayList.get(j[0]);
 			j[0] = j[0]+5;
 			Panel.setList(catNames[i]);
 			Panel.setArray(arrayList);
+			//System.out.println(i);
 			//System.out.println(catNames[i]);
 		}
 		Panel frame = new Panel("Best Buy Catalog",s);
+
 	}
 	
 	// Turns the Array given from the Superclass

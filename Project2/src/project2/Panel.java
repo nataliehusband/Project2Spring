@@ -17,13 +17,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
 
 public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/ch56_11.html
 {
 	JPanel newpanel; 
-	JLabel[] label = new JLabel[7]; 
+	JLabel[] label;
 	String[] string = 
 		{
 		"                                      Product Information Sheet:                           ",
@@ -34,7 +32,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		"       Category:                          ",
 		"             "
 		};
-	FlowLayout layout = new FlowLayout(FlowLayout.LEFT, 10, 25);
+	FlowLayout layout;
 	String pa, qa, pra, na, ca;  
 	String[] categoryOptions = 
 		{
@@ -53,14 +51,13 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	int quant, pri, num; 
 	JTextField[] Answer = new JTextField[5];
 	JButton finished = new JButton("Add"); 
-	JButton Exit = new JButton("Exit");
+	JButton Exit = new JButton("Back");
 	String[] endValues = new String[5];
 	protected static ArrayList<String> list=new ArrayList<String>(); // FRom stackoverFlow
 	protected static String[][] catalogArray;
 	JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 	static String command;
 	static ArrayList prodName;
-	UIManager UI = new UIManager(); 
 	//private List prodName = (List)Inventory.getList();
 	
 	//constructor
@@ -68,6 +65,9 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	{
 		
 		super(title); 
+		label = new JLabel[7]; 
+		layout = new FlowLayout(FlowLayout.LEFT, 10, 25);
+		
 		String command = com;
 		setSize(600, 500); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -179,7 +179,6 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							catch(NumberFormatException e1)
 							{
 								x=0; 
-								UI.put("OptionPane.background", Color.red);
 								JOptionPane.showMessageDialog(null, "Change your quantity to a number!");
 							}
 							
@@ -194,7 +193,6 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							catch(NumberFormatException e1)
 							{
 								y=0; 
-								UI.put("OptionPane.background", Color.red);
 								JOptionPane.showMessageDialog(null, "Change your price to a number!");
 							}
 							//System.out.println(pri); 
@@ -208,7 +206,6 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							catch(NumberFormatException e2)
 							{
 								z=0; 
-								UI.put("OptionPane.background", Color.red);
 								JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!");
 							}
 							//System.out.println(num); 
@@ -227,6 +224,9 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 								Inventory.printResult();
 								for(int j = 0; j<Answer.length;j++){
 									Answer[j].setText("");
+								x=0;
+								y=0;
+								z=0;
 								}
 							}
 						}
@@ -252,6 +252,8 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 			{
 				public void actionPerformed(ActionEvent e)
 				{
+					list.removeAll(list);
+					dispose();
 					mainClass.run();
 				}
 			}
@@ -283,6 +285,5 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	
 	public static void setArray(ArrayList arrayList){
 		prodName = arrayList;
-		System.out.println();
 	}
 }

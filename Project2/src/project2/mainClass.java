@@ -2,6 +2,8 @@ package project2;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -45,10 +47,22 @@ public class mainClass
 		JLabel label = new JLabel();
 		label.setIcon(image);
 		
-		mainCard.setBackground(Color.decode("#003b64"));
+		JFrame window = new JFrame("Best Buy");
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.getContentPane().add(mainCard);
+		window.setSize(1000, 400);
+		window.setLocationRelativeTo(null);
+		
+		
+		mainCard.setBackground(Color.decode("#133048"));
 		view.setBackground(Color.decode("#fff200"));
+		view.setFont(new Font("TimesRoman", Font.BOLD, 36));
 		add.setBackground(Color.decode("#fff200"));
+		add.setFont(new Font("TimesRoman", Font.BOLD, 36));
+		add.setPreferredSize(new Dimension(240, 50));
+		exit.setFont(new Font("TimesRoman", Font.BOLD, 36));
 		exit.setBackground(Color.decode("#fff200"));
+		exit.setPreferredSize(new Dimension(1,100));
 		
 		view.addActionListener(new ActionListener()
 		{ 
@@ -67,8 +81,7 @@ public class mainClass
 				while(curFile == null){
 					
 				}
-				
-				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+				window.dispose();
 				Inventory inventory = new Inventory("view");
 			}
 		}
@@ -91,8 +104,7 @@ public class mainClass
 				while(curFile == null){
 					
 				}
-				
-				frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+				window.dispose();
 				Inventory inventory = new Inventory("add");
 			}
 		}
@@ -112,13 +124,8 @@ public class mainClass
 		mainCard.add(add, BorderLayout.LINE_END);
 		mainCard.add(exit, BorderLayout.PAGE_END);
 		
-		JFrame window = new JFrame("Best Buy");
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.getContentPane().add(mainCard);
-		window.setSize(1000, 400);
-		window.setLocationRelativeTo(null);
-		window.setVisible(true);
 		
+		window.setVisible(true);
 		
 		/*JFileChooser choose = new JFileChooser();
 		File f = new File(new File("Catalog.txt").getCanonicalPath());
