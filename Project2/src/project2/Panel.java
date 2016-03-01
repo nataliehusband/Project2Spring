@@ -198,8 +198,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							{
 								x=0; 
 								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your quantity to a number!		");
-							}
+								JOptionPane.showMessageDialog(null, "Change your quantity to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
 							
 							//System.out.println(quant); 
 							
@@ -213,8 +212,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							{
 								y=0; 
 								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your price to a number!		");
-							}
+								JOptionPane.showMessageDialog(null, "Change your price to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
 							//System.out.println(pri); 
 							
 							na = Answer[3].getText(); 
@@ -227,8 +225,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							{
 								z=0; 
 								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!		");
-							}
+								JOptionPane.showMessageDialog(null, "Change your Numeric ID to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
 							//System.out.println(num); 
 							
 							 
