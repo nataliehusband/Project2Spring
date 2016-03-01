@@ -34,11 +34,11 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 25));
 		
 		//initializes all of the JLabels 
-		productName = new JLabel("Product Name:          "); 
-		quantity = new JLabel("Quantity of Item:      ");
-		price = new JLabel("Price of Item:            "); 
-		numericID = new JLabel("Numeric ID of item: "); 
-		category = new JLabel("Category:                 "); 
+		productName = new JLabel("Product Name:        "); 
+		quantity = new JLabel("Quantity of Item:     ");
+		price = new JLabel("Price of Item:           "); 
+		numericID = new JLabel("Numeric ID of item:"); 
+		category = new JLabel("Category:                  "); 
 	
 		add(productName);
 		productAnswer.setSize(100,20);

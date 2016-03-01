@@ -1,6 +1,6 @@
 package project2;
 
-public class Inventory 
+public class Inventory extends Superclass
 {
 	
 }
