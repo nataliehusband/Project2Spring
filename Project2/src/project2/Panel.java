@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 
 public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/ch56_11.html
 {
@@ -58,6 +60,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 	static String command;
 	static ArrayList prodName;
+	UIManager UI = new UIManager(); 
 	//private List prodName = (List)Inventory.getList();
 	
 	//constructor
@@ -179,6 +182,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							catch(NumberFormatException e1)
 							{
 								x=0; 
+								UI.put("OptionPane.background", Color.red);
 								JOptionPane.showMessageDialog(null, "Change your quantity to a number!");
 							}
 							
@@ -193,6 +197,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							catch(NumberFormatException e1)
 							{
 								y=0; 
+								UI.put("OptionPane.background", Color.red);
 								JOptionPane.showMessageDialog(null, "Change your price to a number!");
 							}
 							//System.out.println(pri); 
@@ -206,6 +211,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							catch(NumberFormatException e2)
 							{
 								z=0; 
+								UI.put("OptionPane.background", Color.red);
 								JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!");
 							}
 							//System.out.println(num); 
