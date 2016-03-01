@@ -1,11 +1,5 @@
 package project2;
 
-/*
- * Best Buy Catalog View/Add
- * 
- * 
- */
-
 import java.io.*;
 import java.util.*;
 
@@ -14,7 +8,7 @@ import javax.swing.JFrame;
 
 public class Superclass
 {
-	protected static File file = mainClass.GetFile();
+	protected static File file;
 	private static Scanner in;
 	public final int SUBJECTS = 5;
 	private int[] value = {0};
@@ -22,13 +16,11 @@ public class Superclass
 	private String g;
 	
 	public Superclass(){
-		
+		 file = mainClass.GetFile();
 		Initialize();
 		
 	}
 	
-	
-	 
 	public void Initialize()
 	{
 		
@@ -40,10 +32,11 @@ public class Superclass
 		{
 			
 		}
-		
+		//value[0] = 0;
 		while(in.hasNextLine()){
 			value[0] = value[0]+1;
 			g=in.nextLine();
+			//System.out.println(value[0]);
 		}
 		
 		value[0] = value[0]/5;
