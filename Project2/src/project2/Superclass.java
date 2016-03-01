@@ -3,34 +3,40 @@ package project2;
 import java.io.*;
 import java.util.*;
 
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
 public class Superclass
 {
-	protected static File file = new File("Catalog.txt");
+	protected static File file;
 	private static Scanner in;
 	public final int SUBJECTS = 5;
 	private int[] value = {0};
-	private String[][] nameArray;
+	protected String[][] nameArray;
 	private String g;
 	
 	public Superclass(){
+		 file = mainClass.GetFile();
 		Initialize();
-		
 		
 	}
 	
-	public void Initialize(){
+	public void Initialize()
+	{
+		
 		try 
 		{
 			in = new Scanner(file);
 		} 
 		catch (FileNotFoundException e) 
 		{
-			e.printStackTrace();
+			
 		}
-		
+		//value[0] = 0;
 		while(in.hasNextLine()){
 			value[0] = value[0]+1;
 			g=in.nextLine();
+			System.out.println(value[0]);
 		}
 		
 		value[0] = value[0]/5;
@@ -56,13 +62,13 @@ public class Superclass
 		}
 	}
 	
-	public String[][] getArray(){
-		String[][] newArray = nameArray.clone();
-		return newArray;
-	}
+
+	
 	
 	public int getValue(){
 		return value[0];
 	}
+	
+	
 	
 }

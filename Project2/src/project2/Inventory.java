@@ -6,25 +6,42 @@ import java.util.*;
 
 public class Inventory extends Superclass
 {
-	private String[][] nameArray = getArray();
-	private int[] value = {getValue()};
-	private static List<String> arrayList = new ArrayList();
-	private static Panel frame = new Panel("BEST BUY CATALOG SHEET");
-	private static PrintWriter out;
 	
-	public Inventory(){
+	private int[] value = {getValue()};
+	private static ArrayList arrayList;
+	private static PrintWriter out;
+	private String[] catNames;
+	
+	public Inventory(String s){
+		arrayList = new ArrayList();
+		catNames = new String[value[0]];
 		arrayList(); 
+		int[] j = {0};
+		//Panel.setArray(nameArray);
+		
+		for(int i = 0; i < arrayList.size()/5;i++){
+			catNames[i] = "";
+			catNames[i]=(String) arrayList.get(j[0]);
+			j[0] = j[0]+5;
+			Panel.setList(catNames[i]);
+			Panel.setArray(arrayList);
+			System.out.println(i);
+			//System.out.println(catNames[i]);
+		}
+		Panel frame = new Panel("Best Buy Catalog",s);
+
 	}
 	
 	// Turns the Array given from the Superclass
 	// from the 2D Array
-	//003b64
+	
 	private void arrayList(){
 		for(int i = 0;i<value[0];i++){
 			for(int j = 0;j<SUBJECTS;j++){
 				arrayList.add(nameArray[i][j]);
 			}
 		}
+		
 		/*for (String e : arrayList)
 	      {
 	         System.out.println(e);
@@ -32,16 +49,13 @@ public class Inventory extends Superclass
 	      */
 	}
 	
-	public static void addResult(){
-		arrayList.add(frame.getName());
-		arrayList.add(frame.getQuantity());
-		arrayList.add(frame.getPrice());
-		arrayList.add(frame.getID());
-		arrayList.add(frame.getCat());
-		for (String e : arrayList)
-	      {
-	         //System.out.println(e);
-	      }
+	public static void setResult(String a, String b, String c, String d, String e ){
+		arrayList.add(a);
+		arrayList.add(b);
+		arrayList.add(c);
+		arrayList.add(d);
+		arrayList.add(e);
+		
 		
 	}
 	
@@ -52,10 +66,17 @@ public class Inventory extends Superclass
 		} catch (FileNotFoundException e1) {
 			System.out.println("File not Available");
 		}
-		for (String e: arrayList){
+		for (Object e: arrayList){
 			
 			out.println(e);
 		}
 		out.close();
 	}
+	/*public String[] getProductName(){
+		return(Names);
+	}*/
+
+	
+	
+	
 }
