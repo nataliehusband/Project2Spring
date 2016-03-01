@@ -61,10 +61,10 @@ public class Inventory extends Superclass
 		} catch (FileNotFoundException e1) {
 			System.out.println("File not Available");
 		}
-		/*for (String e: arrayList){
+		for (Object e: arrayList){
 			
 			out.println(e);
-		}*/
+		}
 		out.close();
 	}
 	/*public String[] getProductName(){
