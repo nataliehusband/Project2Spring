@@ -77,6 +77,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		setLocationRelativeTo(null); 
 		getContentPane().setBackground(Color.decode("#003b64"));
 		setLayout(layout);
+		setResizable(false);
 		
 		//initializes all of the JLabels
 		

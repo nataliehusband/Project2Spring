@@ -93,12 +93,14 @@ public class mainClass
 			{
 				JFileChooser choose = new JFileChooser();
 				File f = null;
-				try {
+				try 
+				{
 					f = new File(new File("Catalog.txt").getCanonicalPath());
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
 			    choose.setSelectedFile(f);
+			    choose.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			    choose.showOpenDialog(null);
 			    curFile = choose.getSelectedFile();
 				while(curFile == null){
