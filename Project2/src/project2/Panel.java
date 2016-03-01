@@ -5,11 +5,14 @@ import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.*;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -62,6 +65,11 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 	static String command;
 	static ArrayList prodName;
+	ImageIcon icon = new ImageIcon("error.jpg"); 
+	Image newImg = icon.getImage(); 
+	Image img = newImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); 	
+	ImageIcon newIcon = new ImageIcon(img); 
+
 	UIManager UI = new UIManager(); 
 	//private List prodName = (List)Inventory.getList();
 	
