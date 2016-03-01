@@ -12,16 +12,17 @@ public class Superclass
 	private static Scanner in;
 	public final int SUBJECTS = 5;
 	private int[] value = {0};
-	private String[][] nameArray;
+	protected String[][] nameArray;
 	private String g;
 	
 	public Superclass(){
 		
 		Initialize();
 		
-		
 	}
 	
+	
+	 
 	public void Initialize()
 	{
 		
@@ -56,16 +57,14 @@ public class Superclass
 				String q = in.nextLine();
 				q.trim();
 				nameArray[i][j] = q;
-				System.out.print(nameArray[i][j] + "  ");
+				//System.out.print(nameArray[i][j] + "  ");
 			}
-			System.out.println("");
+			//System.out.println("");
 		}
 	}
 	
-	public String[][] getArray(){
-		String[][] newArray = nameArray.clone();
-		return newArray;
-	}
+
+	
 	
 	public int getValue(){
 		return value[0];

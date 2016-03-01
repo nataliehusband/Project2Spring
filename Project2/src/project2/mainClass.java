@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class mainClass 
 {		
 	private static File curFile;
-	Inventory inventory = new Inventory();
+	//Inventory inventory = new Inventory();
 	/*static Panel frame = new Panel("Hello"); 
 	static Superclass start = new Superclass();
 	 */
@@ -24,7 +24,7 @@ public class mainClass
 		while(curFile == null){
 			
 		}
-		Inventory inventory1 = new Inventory();
+		Inventory inventory = new Inventory("view");
 		
 		
 		//Inventory inventory1 = new Inventory();
