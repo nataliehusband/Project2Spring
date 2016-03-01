@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.*;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -35,7 +34,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 				"       Price of Item:                  $",
 				"       Numeric ID of item:         #",
 				"       Category:                          ",
-				"             "
+				"                "
 		};
 	FlowLayout layout;
 	String pa, qa, pra, na, ca;  
@@ -49,7 +48,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 			"Audio, Car Electronics, & GPS",
 			"Video Games, Movies & Music", 
 			"Health, Fitness & Beauty", 
-			"Connected Home & Housewares                        ",
+			"Connected Home & Housewares         ",
 			"Toys, Games & Drones",
 			"Wearable Technology"
 	}; 
@@ -78,6 +77,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	{
 		
 		super(title); 
+		
 		label = new JLabel[7]; 
 		layout = new FlowLayout(FlowLayout.LEFT, 10, 25);
 		
@@ -263,6 +263,8 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 				});
 		
 		Exit.setBackground(Color.decode("#FFF200"));
+		Exit.setOpaque(true);
+		Exit.setBorderPainted(false);
 		Exit.setPreferredSize(new Dimension(200,75));
 		Exit.setFont(new Font("TimesRoman", Font.BOLD, 36));
 		add(Exit);
