@@ -1,5 +1,10 @@
 package project2;
 
+/*
+ * Best Buy Catalog View/Add
+ * 
+ * 
+ */
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
