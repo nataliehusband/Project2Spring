@@ -26,36 +26,38 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 	JLabel[] label;
 	String[] string = 
 		{
-		"                                      Product Information Sheet:                           ",
-		"       Product Name:                  ",
-		"       Quantity of Item:             #",
-		"       Price of Item:                  $",
-		"       Numeric ID of item:         #",
-		"       Category:                          ",
-		"             "
+				"                                      Product Information Sheet:                           ",
+				"       Product Name:                  ",
+				"       Quantity of Item:             #",
+				"       Price of Item:                  $",
+				"       Numeric ID of item:         #",
+				"       Category:                          ",
+				"             "
 		};
 	FlowLayout layout;
 	String pa, qa, pra, na, ca;  
 	String[] categoryOptions = 
-		{
-		"Appliances",
-		"TV & Home Theater",
-		"Computers & Tablets",
-		"Cell Phones",
-		"Cameras & Camcorders",
-		"Audio, Car Electronics, & GPS",
-		"Video Games, Movies & Music", 
-		"Health, Fitness & Beauty", 
-		"Connected Home & Housewares                        ",
-		"Toys, Games & Drones",
-		"Wearable Technology"}; 
+	{
+			"Appliances",
+			"TV & Home Theater",
+			"Computers & Tablets",
+			"Cell Phones",
+			"Cameras & Camcorders",
+			"Audio, Car Electronics, & GPS",
+			"Video Games, Movies & Music", 
+			"Health, Fitness & Beauty", 
+			"Connected Home & Housewares                        ",
+			"Toys, Games & Drones",
+			"Wearable Technology"
+	}; 
+	
 	//String[] nameOptions = Inventory.getNames();
 	int quant, pri, num; 
 	JTextField[] Answer = new JTextField[5];
 	JButton finished = new JButton("Add"); 
 	JButton Exit = new JButton("Back");
 	String[] endValues = new String[5];
-	protected static ArrayList<String> list=new ArrayList<String>(); // FRom stackoverFlow
+	protected static ArrayList<String> list=new ArrayList<String>(); // From stackoverFlow
 	protected static String[][] catalogArray;
 	JComboBox box = new JComboBox(categoryOptions); //https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 	static String command;
@@ -80,11 +82,13 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		
 		//initializes all of the JLabels
 		
-		for(int i = 0; i<string.length; i++){
+		for(int i = 0; i<string.length; i++)
+		{
 			label[i] = new JLabel(string[i]);
 			label[i].setFont(new Font("TimesRoman", Font.PLAIN, 18));
 		}
-		for(int i = 0; i<Answer.length;i++){
+		for(int i = 0; i<Answer.length;i++)
+		{
 			Answer[i] = new JTextField(20);
 			Answer[i].setFont(new Font("TimesRoman", Font.PLAIN, 18)); 
 		}
@@ -98,26 +102,21 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		String names[]=list.toArray(new String[list.size()]);
 		JComboBox box1 = new JComboBox(names);
 		
-		if(command == "add"){
+		if(command == "add")
+		{
 			Answer[0].setSize(100,20);
 			Answer[0].setBackground(Color.decode("#FFF200"));
 			add(Answer[0]);	
 		}
 		if(command == "view")
-		{
-
-			
+		{	
 			box1.setSize(100,20);
 			box1.setBackground(Color.decode("#FFF200"));
 			add(box1); 
 			Answer[1].setEditable(false);
 			Answer[2].setEditable(false);
 			Answer[3].setEditable(false);
-			box.setEditable(false);
-
-			
-			
-
+			box.setEditable(false);	
 		}
 		
 		
@@ -143,24 +142,31 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		add(label[5]);
 		label[5].setForeground(Color.WHITE);
 		
-		if(command == "add"){
-		//box.setSelectedIndex();
-		box.setBackground(Color.decode("#FFF200"));
-		add(box); 
-		//categoryOptions.addActionListener(categoryOptions); 
+		if(command == "add")
+		{
+			//box.setSelectedIndex();
+			box.setBackground(Color.decode("#FFF200"));
+			add(box); 
+			//categoryOptions.addActionListener(categoryOptions); 
 		}
-		if(command == "view"){
+		if(command == "view")
+		{
 			Answer[4].setBackground(Color.decode("#FFF200"));
 			Answer[4].setEditable(false);
 			Answer[4].setSize(100,20);
 			add(Answer[4]);
 		}
 		
-		add(label[6]);  
-		if(command == "view"){
+		add(label[6]);
+		
+		if(command == "view")
+		{
 			finished.setText("View");
 		}
+		
 		finished.setBackground(Color.decode("#FFF200"));
+		finished.setOpaque(true);
+		finished.setBorderPainted(false);
 		finished.setPreferredSize(new Dimension(200,75));
 		finished.setFont(new Font("TimesRoman", Font.BOLD, 36));
 		add(finished); 
@@ -168,7 +174,8 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						if(command == "add"){
+						if(command == "add")
+						{
 							int x, y, z; 
 							pa = Answer[0].getText();
 							//System.out.println(pa);
@@ -183,7 +190,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							{
 								x=0; 
 								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your quantity to a number!");
+								JOptionPane.showMessageDialog(null, "Change your quantity to a number!		");
 							}
 							
 							//System.out.println(quant); 
@@ -198,7 +205,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							{
 								y=0; 
 								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your price to a number!");
+								JOptionPane.showMessageDialog(null, "Change your price to a number!		");
 							}
 							//System.out.println(pri); 
 							
@@ -212,7 +219,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							{
 								z=0; 
 								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!");
+								JOptionPane.showMessageDialog(null, "Chance your Numeric ID to a number!		");
 							}
 							//System.out.println(num); 
 							
@@ -228,11 +235,12 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 								endValues[4] = categoryOptions[i];
 								Inventory.setResult(endValues[0], endValues[1], endValues[2], endValues[3], endValues[4] );
 								Inventory.printResult();
-								for(int j = 0; j<Answer.length;j++){
+								for(int j = 0; j<Answer.length;j++)
+								{
 									Answer[j].setText("");
-								x=0;
-								y=0;
-								z=0;
+									x=0;
+									y=0;
+									z=0;
 								}
 							}
 						}
@@ -247,8 +255,7 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 							
 						}
 					}
-				}
-		);
+				});
 		
 		Exit.setBackground(Color.decode("#FFF200"));
 		Exit.setPreferredSize(new Dimension(200,75));
@@ -262,34 +269,39 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 					dispose();
 					mainClass.run();
 				}
-			}
-		);
-		
+			});
 		setVisible(true);
 	}
 	
 	
-	public String getName(){
+	public String getName()
+	{
 		return(endValues[0]);
 	}
-	public String getQuantity(){
+	public String getQuantity()
+	{
 		return(endValues[1]);
 	}
-	public String getPrice(){
+	public String getPrice()
+	{
 		return(endValues[2]);
 	}
-	public String getID(){
+	public String getID()
+	{
 		return(endValues[3]);
 	}
-	public String getCat(){
+	public String getCat()
+	{
 		return(endValues[4]);
 	}
 	
-	public static void setList(String s){
+	public static void setList(String s)
+	{
 		list.add(s);
 	}
 	
-	public static void setArray(ArrayList arrayList){
+	public static void setArray(ArrayList arrayList)
+	{
 		prodName = arrayList;
 	}
 }

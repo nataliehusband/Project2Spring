@@ -12,14 +12,16 @@ public class Inventory extends Superclass
 	private static PrintWriter out;
 	private String[] catNames;
 	
-	public Inventory(String s){
+	public Inventory(String s)
+	{
 		arrayList = new ArrayList();
 		catNames = new String[value[0]];
 		arrayList(); 
 		int[] j = {0};
 		//Panel.setArray(nameArray);
 		
-		for(int i = 0; i < arrayList.size()/5;i++){
+		for(int i = 0; i < arrayList.size()/5;i++)
+		{
 			catNames[i] = "";
 			catNames[i]=(String) arrayList.get(j[0]);
 			j[0] = j[0]+5;
@@ -29,19 +31,20 @@ public class Inventory extends Superclass
 			//System.out.println(catNames[i]);
 		}
 		Panel frame = new Panel("Best Buy Catalog",s);
-
 	}
 	
 	// Turns the Array given from the Superclass
 	// from the 2D Array
 	
-	private void arrayList(){
-		for(int i = 0;i<value[0];i++){
-			for(int j = 0;j<SUBJECTS;j++){
+	private void arrayList()
+	{
+		for(int i = 0;i<value[0];i++)
+		{
+			for(int j = 0;j<SUBJECTS;j++)
+			{
 				arrayList.add(nameArray[i][j]);
 			}
 		}
-		
 		/*for (String e : arrayList)
 	      {
 	         System.out.println(e);

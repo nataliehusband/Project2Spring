@@ -15,7 +15,8 @@ public class Superclass
 	protected String[][] nameArray;
 	private String g;
 	
-	public Superclass(){
+	public Superclass()
+	{
 		 file = mainClass.GetFile();
 		Initialize();
 		
@@ -33,7 +34,8 @@ public class Superclass
 			
 		}
 		//value[0] = 0;
-		while(in.hasNextLine()){
+		while(in.hasNextLine())
+		{
 			value[0] = value[0]+1;
 			g=in.nextLine();
 			//System.out.println(value[0]);
@@ -51,8 +53,10 @@ public class Superclass
 			e.printStackTrace();
 		}
 		
-		for(int i = 0;i<value[0];i++){
-			for(int j = 0;j<SUBJECTS;j++){
+		for(int i = 0;i<value[0];i++)
+		{
+			for(int j = 0;j<SUBJECTS;j++)
+			{
 				String q = in.nextLine();
 				q.trim();
 				nameArray[i][j] = q;
@@ -65,7 +69,8 @@ public class Superclass
 
 	
 	
-	public int getValue(){
+	public int getValue()
+	{
 		return value[0];
 	}
 	
