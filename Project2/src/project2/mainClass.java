@@ -1,5 +1,12 @@
 package project2;
 
+/* Best Buy Catalog 
+ * Main Class
+ * 
+ * 
+ * 
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -38,8 +45,8 @@ public class mainClass
 		JFrame frame = new JFrame();
 		
 		JPanel mainCard = new JPanel(new BorderLayout(8, 8));
-		view = new JButton("View");
-		add = new JButton("Add");
+		view = new JButton("View Inventory");
+		add = new JButton("Add Product");
 		exit = new JButton("Exit");
 		frame.add(mainCard);
 		
@@ -56,12 +63,18 @@ public class mainClass
 		
 		mainCard.setBackground(Color.decode("#133048"));
 		view.setBackground(Color.decode("#fff200"));
-		view.setFont(new Font("TimesRoman", Font.BOLD, 36));
+		view.setOpaque(true);
+		view.setBorderPainted(false);
+		view.setFont(new Font("TimesRoman", Font.BOLD, 30));
 		add.setBackground(Color.decode("#fff200"));
-		add.setFont(new Font("TimesRoman", Font.BOLD, 36));
+		add.setOpaque(true);
+		add.setBorderPainted(false);
+		add.setFont(new Font("TimesRoman", Font.BOLD, 30));
 		add.setPreferredSize(new Dimension(240, 50));
 		exit.setFont(new Font("TimesRoman", Font.BOLD, 36));
 		exit.setBackground(Color.decode("#fff200"));
+		exit.setOpaque(true);
+		exit.setBorderPainted(false);
 		exit.setPreferredSize(new Dimension(1,100));
 		
 		view.addActionListener(new ActionListener()
@@ -93,14 +106,12 @@ public class mainClass
 			{
 				JFileChooser choose = new JFileChooser();
 				File f = null;
-				try 
-				{
+				try {
 					f = new File(new File("Catalog.txt").getCanonicalPath());
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
 			    choose.setSelectedFile(f);
-			    choose.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			    choose.showOpenDialog(null);
 			    curFile = choose.getSelectedFile();
 				while(curFile == null){
