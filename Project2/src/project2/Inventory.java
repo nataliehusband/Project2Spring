@@ -1,9 +1,8 @@
 package project2;
 
-/* Best Buy Catalog 
+/* 
+ * Best Buy Catalog 
  * Sub Class of Superclass
- * 
- * 
  * 
  */
 
@@ -15,10 +14,34 @@ import java.util.*;
 public class Inventory extends Superclass
 {
 	
-	private int[] value = {getValue()};
+	/*
+	 * initializes an ArrayLsit object called arrayList and a printwriter
+	 * at compile.initialize array of ints called value and Strings called 
+	 * catNames when instantiated.
+	 */
+	
 	private static ArrayList arrayList;
 	private static PrintWriter out;
+	private int[] value = {getValue()};
 	private String[] catNames;
+	
+	/*
+	 * Blank Constructor
+	 */
+	public Inventory(){
+		
+	}
+	
+	/*
+	 * Constructor Inventory
+	 * requires a parameter of a String
+	 * arrayLsit is a new ArrayList object and catNames is a new
+	 * String Array with length of value[0] passed from Superclass
+	 * then the method arrayList is called and a for loop is ran
+	 * that resets catNames from whatever it previously may have been
+	 * and sets it to the next String in the array List that is a 
+	 * category name.
+	 */
 	
 	public Inventory(String s)
 	{
@@ -41,8 +64,13 @@ public class Inventory extends Superclass
 		Panel frame = new Panel("Best Buy Catalog",s);
 	}
 	
-	// Turns the Array given from the Superclass
-	// from the 2D Array
+	
+	/* Method arrayList
+	 * takes the 2 Dimensional
+	 * from Superclass and puts every String in to 
+	 * an Array List.
+	 */
+
 	
 	private void arrayList()
 	{
@@ -60,6 +88,11 @@ public class Inventory extends Superclass
 	      */
 	}
 	
+	/* Method setResult  
+	 * Needs 5 strings, when called, it adds each
+	 * String to the array list in order.
+	 */
+	
 	public static void setResult(String a, String b, String c, String d, String e ){
 		arrayList.add(a);
 		arrayList.add(b);
@@ -69,6 +102,13 @@ public class Inventory extends Superclass
 		
 		
 	}
+	
+	/* 
+	 * A method where PrintWriter is created that prints to the file that was read
+	 * earlier in the program. then it read the Array List and prints
+	 * each entry in to the file. Then the PrintWriter closes.
+	 */
+	
 	
 	public static void printResult(){
 		try {

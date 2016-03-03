@@ -14,6 +14,11 @@ import javax.swing.JFrame;
 
 public class Superclass
 {
+	// Initilaize some variables and objects 
+	// File, Scanner, an int Subjects which is final
+	// a String with 1 index that is declared as 0,
+	// a 2D array and a String.
+	
 	protected static File file;
 	private static Scanner in;
 	public final int SUBJECTS = 5;
@@ -21,12 +26,20 @@ public class Superclass
 	protected String[][] nameArray;
 	private String g;
 	
+	// Constructor that calls initialize method 
+	// and sets file to the File found in main.
+	
 	public Superclass()
 	{
-		 file = mainClass.GetFile();
+		file = mainClass.GetFile();
 		Initialize();
 		
 	}
+	
+	/*
+	 * Method Initialize that reads from a file and sets all the information
+	 * in to a 2 dimensional array
+	 */
 	
 	public void Initialize()
 	{
@@ -72,8 +85,10 @@ public class Superclass
 		}
 	}
 	
-
-	
+	/*
+	 * method get Value that returns the value of value[0] that is found in the 
+	 * Initialize class.
+	 */
 	
 	public int getValue()
 	{

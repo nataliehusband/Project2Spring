@@ -186,88 +186,87 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		finished.setFont(new Font("TimesRoman", Font.BOLD, 36));
 		add(finished); 
 		finished.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent e)
 				{
-					public void actionPerformed(ActionEvent e)
+					if(command == "add")
 					{
-						if(command == "add")
+						int x, y, z; 
+						pa = Answer[0].getText();
+						//System.out.println(pa);
+					
+						qa = Answer[1].getText(); 
+						try
 						{
-							int x, y, z; 
-							pa = Answer[0].getText();
-							//System.out.println(pa);
-						
-							qa = Answer[1].getText(); 
-							try
-							{
-								x=1; 
-								quant = Integer.parseInt(qa);
-							}
-							catch(NumberFormatException e1)
-							{
-								x=0; 
-								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your quantity to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
-							
-							//System.out.println(quant); 
-							
-							pra = Answer[2].getText();
-							try
-							{
-								y=1; 
-								pri = Integer.parseInt(pra);
-							}
-							catch(NumberFormatException e1)
-							{
-								y=0; 
-								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your price to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
-							//System.out.println(pri); 
-							
-							na = Answer[3].getText(); 
-							try
-							{
-								z=1; 
-								num = Integer.parseInt(na);
-							}
-							catch(NumberFormatException e2)
-							{
-								z=0; 
-								UI.put("OptionPane.background", Color.red);
-								JOptionPane.showMessageDialog(null, "Change your Numeric ID to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
-							//System.out.println(num); 
-							
-							 
-							
-							if(x==1 && y==1 && z==1)
-							{	
-								endValues[0] = Answer[0].getText();
-								endValues[1] = Answer[1].getText();
-								endValues[2] = Answer[2].getText();
-								endValues[3] = Answer[3].getText();
-								int i = box.getSelectedIndex();
-								endValues[4] = categoryOptions[i];
-								Inventory.setResult(endValues[0], endValues[1], endValues[2], endValues[3], endValues[4] );
-								Inventory.printResult();
-								for(int j = 0; j<Answer.length;j++)
-								{
-									Answer[j].setText("");
-									x=0;
-									y=0;
-									z=0;
-								}
-							}
+							x=1; 
+							quant = Integer.parseInt(qa);
 						}
-						if(command == "view")
+						catch(NumberFormatException e1)
 						{
-							
-							Answer[1].setText((String) prodName.get(box1.getSelectedIndex()*5+1));
-							Answer[2].setText((String) prodName.get(box1.getSelectedIndex()*5+2));
-							Answer[3].setText((String) prodName.get(box1.getSelectedIndex()*5+3));
-							Answer[4].setText((String) prodName.get(box1.getSelectedIndex()*5+4));
-							
-							
+							x=0; 
+							UI.put("OptionPane.background", Color.red);
+							JOptionPane.showMessageDialog(null, "Change your quantity to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
+						
+						//System.out.println(quant); 
+						
+						pra = Answer[2].getText();
+						try
+						{
+							y=1; 
+							pri = Integer.parseInt(pra);
+						}
+						catch(NumberFormatException e1)
+						{
+							y=0; 
+							UI.put("OptionPane.background", Color.red);
+							JOptionPane.showMessageDialog(null, "Change your price to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							}
+						//System.out.println(pri); 
+						
+						na = Answer[3].getText(); 
+						try
+						{
+							z=1; 
+							num = Integer.parseInt(na);
+						}
+						catch(NumberFormatException e2)
+						{
+							z=0; 
+							UI.put("OptionPane.background", Color.red);
+							JOptionPane.showMessageDialog(null, "Change your Numeric ID to a number!     ", title, JOptionPane.INFORMATION_MESSAGE, newIcon);							
+						}
+				
+						if(x==1 && y==1 && z==1)
+						{	
+							endValues[0] = Answer[0].getText();
+							endValues[1] = Answer[1].getText();
+							endValues[2] = Answer[2].getText();
+							endValues[3] = Answer[3].getText();
+							int i = box.getSelectedIndex();
+							endValues[4] = categoryOptions[i];
+							Inventory.setResult(endValues[0], endValues[1], endValues[2], endValues[3], endValues[4] );
+							Inventory.printResult();
+							for(int j = 0; j<Answer.length;j++)
+							{
+								Answer[j].setText("");
+								x=0;
+								y=0;
+								z=0;
+							}
 						}
 					}
-				});
+					
+					if(command == "view")
+					{
+						
+						Answer[1].setText((String) prodName.get(box1.getSelectedIndex()*5+1));
+						Answer[2].setText((String) prodName.get(box1.getSelectedIndex()*5+2));
+						Answer[3].setText((String) prodName.get(box1.getSelectedIndex()*5+3));
+						Answer[4].setText((String) prodName.get(box1.getSelectedIndex()*5+4));
+						
+					}
+				}
+			}
+		);
 		
 		Exit.setBackground(Color.decode("#FFF200"));
 		Exit.setOpaque(true);
@@ -287,6 +286,10 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		setVisible(true);
 	}
 	
+	/*
+	 * The next 5 methods will just return the values of each textField 
+	 * to a variable in the Inventory Class.
+	 */
 	
 	public String getName()
 	{
@@ -309,10 +312,18 @@ public class Panel extends JFrame //http://chortle.ccsu.edu/java5/notes/chap56/c
 		return(endValues[4]);
 	}
 	
+	/*
+	 * setList method that adds the passed variable to the arrayList list.
+	 */
+	
 	public static void setList(String s)
 	{
 		list.add(s);
 	}
+	
+	/*
+	 * sets the arraylist prodName to the passed ArrayList from Inventory
+	 */
 	
 	public static void setArray(ArrayList arrayList)
 	{
